@@ -1,4 +1,3 @@
-j SQLite version 3.x
 development:
   adapter: sqlite3
   database: db/development.sqlite3
