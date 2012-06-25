@@ -5,6 +5,8 @@ class Escape < ActiveRecord::Base
 
    after_create :pull_photos
 
+   has_many :flickr_photos
+
 
    def pull_photos
     Resque.enqueue(FlickrJob, self.to_json)

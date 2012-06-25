@@ -37,8 +37,12 @@ describe "Given I am wanting to browse some escapes" do
       visit escape_path(escape)
     end
 
-    it "shows the stuff" do
-      pending
+    it "displays the Flickr images attached to this escape" do
+      within ("#photos") do
+        flickr_photos.each do |p|
+          page.should have_image p.image_url
+        end
+      end
     end
   end
 end
