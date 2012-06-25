@@ -23,6 +23,19 @@ class FlickrJob
     keyword_photos = flickr.photos.search(:text        => query_string,
                                           :sort        => "interestingness-desc",
                                           :extras      => "url_z")
+    photos = []
+    keyword_photos.each { |p| photos << p }
+    radius_photos.each { |p| photos << p }
+
+
+    photos.each do |photo|
+      attrs = {}
+      attrs[:title]      = photo["title"]
+      attrs[:flickr_id]  = photo["id"]
+      attrs[:url_med]    = photo["url_z"]
+
+      FlickrPhoto.find_or_create_by_flickr_id_and_escape_id(attrs[:flickr_id], escape["id"], attrs)
+    end
   end
 end
 
