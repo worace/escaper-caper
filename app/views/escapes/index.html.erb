@@ -1,5 +1,7 @@
 <div id="escapes">
   <% @escapes.each do |escape| %>
-    <h1><%= escape.title %></h1>
+    <div id='<%="escape_#{escape.id}"%>'>
+      <h1><%= link_to(escape.title, escape_path(escape))%></h1>
+    </div>
   <% end %>
 </div>
