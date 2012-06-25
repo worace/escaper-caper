@@ -25,6 +25,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'launchy'
+  gem 'vcr'
+  gem 'fakeweb'
 end
 
 gem 'jquery-rails'
