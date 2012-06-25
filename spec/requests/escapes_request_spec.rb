@@ -32,16 +32,17 @@ describe "Given I am wanting to browse some escapes" do
   end
 
   context "When I visit an individual escape page" do
-    let(:escape) { FactoryGirl.create(:escape) }
+    let!(:escape) { FactoryGirl.create(:escape) }
+    let!(:photo)  { FactoryGirl.create(:flickr_photo, :escape_id => escape.id) }
+
     before(:each) do
       visit escape_path(escape)
     end
 
     it "displays the Flickr images attached to this escape" do
+      save_and_open_page
       within ("#photos") do
-        flickr_photos.each do |p|
-          page.should have_image p.image_url
-        end
+        page.should have_image photo.url_med
       end
     end
   end

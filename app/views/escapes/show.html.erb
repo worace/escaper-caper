@@ -3,7 +3,7 @@
 
   <div id='photos' class='escape_flickr_photos'>
     <% @flickr_photos.each do |fp| %>
-      <img alt="<%= fp.title %> src="<%=fp.url_med %>">
+      <img alt="<%= fp.title %>" src="<%=fp.url_med%>">
     <% end %>
   </div>
 </div>
