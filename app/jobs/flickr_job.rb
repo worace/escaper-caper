@@ -27,7 +27,6 @@ class FlickrJob
     keyword_photos.each { |p| photos << p }
     radius_photos.each { |p| photos << p }
 
-
     photos.each do |photo|
       attrs = {}
       attrs[:title]      = photo["title"]

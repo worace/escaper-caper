@@ -250,4 +250,51 @@ http_interactions:
         "stat":"ok"}'
     http_version: '1.1'
   recorded_at: Mon, 25 Jun 2012 23:47:35 GMT
+- request:
+    method: post
+    uri: http://api.flickr.com/services/rest/
+    body:
+      encoding: US-ASCII
+      string: text=dolores+libero+id+CT&sort=interestingness-desc&extras=url_z&method=flickr.photos.search&format=json&nojsoncallback=1
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - FlickRaw/0.9.6
+      authorization:
+      - OAuth realm="http://api.flickr.com/services/rest/", oauth_consumer_key="010f7dfe82a58f42b9640383238f51c6",
+        oauth_nonce="nKC6tZW%2B2oZV%2FB19nFr8I8gl12e5nx2XlQt8OfpJQpc%3D", oauth_signature="UXIZWU9DhEvkThi4brSvlKA1LRY%3D",
+        oauth_signature_method="HMAC-SHA1", oauth_timestamp="1340670263", oauth_token="",
+        oauth_version="1.0"
+      content-type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 26 Jun 2012 00:24:24 GMT
+      p3p:
+      - policyref="http://info.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM DEV
+        TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY
+        ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      cache-control:
+      - private
+      x-served-by:
+      - www13.flickr.mud.yahoo.com
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '85'
+      connection:
+      - close
+      content-type:
+      - application/json
+    body:
+      encoding: US-ASCII
+      string: ! '{"photos":{"page":1, "pages":0, "perpage":100, "total":"0", "photo":[]},
+        "stat":"ok"}'
+    http_version: '1.1'
+  recorded_at: Tue, 26 Jun 2012 00:24:24 GMT
 recorded_with: VCR 2.2.2
