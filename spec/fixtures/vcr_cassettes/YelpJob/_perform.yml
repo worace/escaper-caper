@@ -1,0 +1,237 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.yelp.com/v2/search?term=restaurant&location=&cll=0%2C0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - OAuth gem v0.4.6
+      authorization:
+      - OAuth oauth_consumer_key="qc7iNxoz_yiFC2MQvx6lBg", oauth_nonce="M68oZ29NjIRJ7ApTkj6mWs0AzcJT7REZhIa8KIYv3w",
+        oauth_signature="yTeVju0lPoGHp6CcvluRkRSFHUE%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1340817712", oauth_token="-ZMKurf-YXtoCLcPyaSvK8K-Bp9s5hX-",
+        oauth_version="1.0"
+      connection:
+      - close
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      date:
+      - Wed, 27 Jun 2012 17:21:50 GMT
+      server:
+      - Apache
+      x-node:
+      - web34, wsgi, api_com
+      cache-control:
+      - private
+      set-cookie:
+      - bse=271c97c5dfdd452e63adbb8cd229a45a; Path=/; HttpOnly
+      content-length:
+      - '470'
+      vary:
+      - User-Agent
+      connection:
+      - close
+      content-type:
+      - application/json; charset=UTF-8
+      x-mode:
+      - rw
+      x-proxied:
+      - lb1
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"text":"Signature was invalid","id":"INVALID_SIGNATURE","description":"Invalid
+        signature. Expected signature base string: GET&http%3A%2F%2Fapi.yelp.com%2Fv2%2Fsearch&cll%3D0%252C0%26location%3D%26oauth_consumer_key%3Dqc7iNxoz_yiFC2MQvx6lBg%26oauth_nonce%3DM68oZ29NjIRJ7ApTkj6mWs0AzcJT7REZhIa8KIYv3w%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1340817712%26oauth_token%3D-ZMKurf-YXtoCLcPyaSvK8K-Bp9s5hX-%26oauth_version%3D1.0%26term%3Drestaurant"}}'
+    http_version: '1.1'
+  recorded_at: Wed, 27 Jun 2012 17:21:52 GMT
+- request:
+    method: get
+    uri: http://api.yelp.com/business_review_search?category=ice+cream&location=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      user-agent:
+      - yelp for Ruby (http://www.rubyforge.org/projects/yelp/)
+      accept-encoding:
+      - gzip,deflate
+      accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        V2VkLCAyNyBKdW4gMjAxMiAxNzoyNToxNCBHTVQ=
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hl
+      !binary "eC1ub2Rl":
+      - !binary |-
+        d2ViMzgsIHdzZ2ksIGFwaV9jb20=
+      !binary "Y2FjaGUtY29udHJvbA==":
+      - !binary |-
+        cHJpdmF0ZQ==
+      !binary "c2V0LWNvb2tpZQ==":
+      - !binary |-
+        YnNlPWI3NjYwYjM4NDI5Y2YyYWE0Mjc3ZDkwZDI1NWQ5NWZlOyBQYXRoPS87
+        IEh0dHBPbmx5
+      !binary "dmFyeQ==":
+      - !binary |-
+        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "Y29ubmVjdGlvbg==":
+      - !binary |-
+        Y2xvc2U=
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC9wbGFpbjsgY2hhcnNldD11dGYtOA==
+      !binary "eC1tb2Rl":
+      - !binary |-
+        cnc=
+      !binary "eC1wcm94aWVk":
+      - !binary |-
+        bGIx
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAzSMsQrCQBBEf0W2sPFQxO4g2NhYWKWQECSc53AumBzsXqIS
+        8u9uI1PNvJmZqYdqSCA/U8GnkKcLq/KQVs21Pp/IUcwPwwdHE0Q5D1bZb02G
+        RmFzu/toA/vpBBPj3SmCxOcxhoKU5VtxxCYKQr9+ZQvto6LF0X8GJd/elh8A
+        AAD//wMAhZoTnYwAAAA=
+    http_version: !binary |-
+      MS4x
+  recorded_at: Wed, 27 Jun 2012 17:25:17 GMT
+- request:
+    method: get
+    uri: http://api.yelp.com/business_review_search?category=pizza&location=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      user-agent:
+      - yelp for Ruby (http://www.rubyforge.org/projects/yelp/)
+      accept-encoding:
+      - gzip,deflate
+      accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        V2VkLCAyNyBKdW4gMjAxMiAxNzoyNTozMCBHTVQ=
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hl
+      !binary "eC1ub2Rl":
+      - !binary |-
+        d2ViMzEsIHdzZ2ksIGFwaV9jb20=
+      !binary "Y2FjaGUtY29udHJvbA==":
+      - !binary |-
+        cHJpdmF0ZQ==
+      !binary "c2V0LWNvb2tpZQ==":
+      - !binary |-
+        YnNlPTRkYmU5ZmRhZjk0NDhlOWQ0NWE0M2EzZmRjZmM0N2FkOyBQYXRoPS87
+        IEh0dHBPbmx5
+      !binary "dmFyeQ==":
+      - !binary |-
+        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "Y29ubmVjdGlvbg==":
+      - !binary |-
+        Y2xvc2U=
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC9wbGFpbjsgY2hhcnNldD11dGYtOA==
+      !binary "eC1tb2Rl":
+      - !binary |-
+        cnc=
+      !binary "eC1wcm94aWVk":
+      - !binary |-
+        bGIx
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAzSMvQrCQBCEX0WmsDoUsTsINjYWVhYiQcJ5LueC5mT3kmhC
+        3t1tZKr5+WbCi1RDIvgJhT4FHkdW5TYtLufTYQ+HmO9Wbx16EuXc2mSzMlnV
+        CZtb3zoD7KcR6pmGRilIfOxiKJSyfKs3j2NYPrMFxleYHf4IKXx9nX8AAAD/
+        /wMAz6GSHYgAAAA=
+    http_version: !binary |-
+      MS4x
+  recorded_at: Wed, 27 Jun 2012 17:25:33 GMT
+- request:
+    method: get
+    uri: http://api.yelp.com/v2/search?term=restaurants&location=new%20york
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - OAuth gem v0.4.6
+      authorization:
+      - OAuth oauth_consumer_key="qc7iNxoz_yiFC2MQvx6lBg", oauth_nonce="Zg0NgNLBx8jNon3M1I7qyGCh1WvD6O37OC2FPBMFcA",
+        oauth_signature="TDrvE5uYxiYN2jEPQvwtl0uPlLg%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1340819717", oauth_token="-ZMKurf-YXtoCLcPyaSvK8K-Bp9s5hX-",
+        oauth_version="1.0"
+      connection:
+      - close
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      date:
+      - Wed, 27 Jun 2012 17:55:15 GMT
+      server:
+      - Apache
+      x-node:
+      - web40, wsgi, api_com
+      cache-control:
+      - private
+      set-cookie:
+      - bse=463d6d535dc7dec71961403b757aad03; Path=/; HttpOnly
+      content-length:
+      - '467'
+      vary:
+      - User-Agent
+      connection:
+      - close
+      content-type:
+      - application/json; charset=UTF-8
+      x-mode:
+      - rw
+      x-proxied:
+      - lb1
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"text":"Signature was invalid","id":"INVALID_SIGNATURE","description":"Invalid
+        signature. Expected signature base string: GET&http%3A%2F%2Fapi.yelp.com%2Fv2%2Fsearch&location%3Dnew%2520york%26oauth_consumer_key%3Dqc7iNxoz_yiFC2MQvx6lBg%26oauth_nonce%3DZg0NgNLBx8jNon3M1I7qyGCh1WvD6O37OC2FPBMFcA%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1340819717%26oauth_token%3D-ZMKurf-YXtoCLcPyaSvK8K-Bp9s5hX-%26oauth_version%3D1.0%26term%3Drestaurants"}}'
+    http_version: '1.1'
+  recorded_at: Wed, 27 Jun 2012 17:55:18 GMT
+recorded_with: VCR 2.2.2

@@ -27,10 +27,4 @@ describe FlickrPhoto do
     photo.reject
     photo.current_state.should == "rejected"
   end
-
-  it "enqueues the verification job after a photo is created" do
-    photo = FactoryGirl.build(:flickr_photo)
-    photo.should_receive(:check_photo)
-    photo.save
-  end
 end

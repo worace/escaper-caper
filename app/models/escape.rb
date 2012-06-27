@@ -6,6 +6,7 @@ class Escape < ActiveRecord::Base
    after_create :pull_photos
 
    has_many :flickr_photos
+   has_many :foursquare_spots
 
 
    def pull_photos

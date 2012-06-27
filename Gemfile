@@ -10,6 +10,7 @@ gem 'flickraw'
 gem 'aasm'
 gem 'faraday'
 gem 'yelpster'
+gem 'foursquare2'
 
 
 # Gems used only for assets and not required
