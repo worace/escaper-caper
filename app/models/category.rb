@@ -4,6 +4,7 @@ class Category < ActiveRecord::Base
                   :plural_name,
                   :short_name,
                   :foursquare_id,
+                  :parent,
                   :primary
 
   has_many :venue_categories

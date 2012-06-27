@@ -34,6 +34,7 @@ describe "Given I am wanting to browse some escapes" do
   context "When I visit an individual escape page" do
     let!(:escape) { FactoryGirl.create(:escape) }
     let!(:photo)  { FactoryGirl.create(:flickr_photo, :escape_id => escape.id) }
+    let!(:venue)  { FactoryGirl.create(:foursquare_spot, :escape_id => escape.id) }
 
     before(:each) do
       visit escape_path(escape)
@@ -42,6 +43,18 @@ describe "Given I am wanting to browse some escapes" do
     it "displays the Flickr images attached to this escape" do
       within ("#photos") do
         page.should have_image photo.url_med
+      end
+    end
+
+    it "displays foursquare venues for the escape" do
+      within("#attraction_#{venue.id}") do
+        page.should have_content venue.name
+      end
+    end
+
+    it "displays foursquare checkins for each venue" do
+      within("#attraction_#{venue.id}") do
+        page.should have_content venue.checkins
       end
     end
   end

@@ -6,5 +6,6 @@ class EscapesController < ApplicationController
   def show
     @escape = Escape.find_by_id(params[:id])
     @flickr_photos = @escape.flickr_photos
+    @foursquare_spots = @escape.foursquare_spots
   end
 end

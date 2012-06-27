@@ -7,6 +7,7 @@ FactoryGirl.define do
     short_name "Art Gallery"
     foursquare_id "4bf58dd8d48988d1e2931735"
     primary true
+    parent "Arts & Entertainment"
     icon_url "https://foursquare.com/img/categories/arts_entertainment/artgallery.png"
   end
 end

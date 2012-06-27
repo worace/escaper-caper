@@ -22,7 +22,7 @@ describe FoursquareJob do
 
     it "adds the categories for the venues" do
       spot = escape.foursquare_spots.last
-      spot.categories.count.should == 1
+      spot.categories.count.should > 0
     end
   end
 end
