@@ -7,6 +7,8 @@ gem 'mechanize'
 gem 'sqlite3'
 gem 'resque'
 gem 'flickraw'
+gem 'aasm'
+gem 'faraday'
 
 
 # Gems used only for assets and not required

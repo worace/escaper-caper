@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120625180957) do
+ActiveRecord::Schema.define(:version => 20120627130951) do
 
   create_table "escapes", :force => true do |t|
     t.string   "title"
@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(:version => 20120625180957) do
     t.string   "url_med"
     t.string   "flickr_id"
     t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "current_state"
   end
 
 end

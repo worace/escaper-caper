@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:8888/
+    body:
+      encoding: US-ASCII
+      string: ! '{"created_at":"2012-06-27T13:49:46Z","current_state":"pending","escape_id":1,"flickr_id":"6371395081","id":1,"title":"Great
+        flickr photo","updated_at":"2012-06-27T13:49:46Z","url_med":"http://farm7.staticflickr.com/6239/6371395081_3d4d35d4be_z.jpg"}'
+    headers:
+      content-type:
+      - application/x-www-form-urlencoded
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+      connection:
+      - close
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - text/plain
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    http_version: '1.1'
+  recorded_at: Wed, 27 Jun 2012 13:49:47 GMT
+recorded_with: VCR 2.2.2
