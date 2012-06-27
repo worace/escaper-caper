@@ -9,6 +9,7 @@ gem 'resque'
 gem 'flickraw'
 gem 'aasm'
 gem 'faraday'
+gem 'yelpster'
 
 
 # Gems used only for assets and not required
