@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627130951) do
+ActiveRecord::Schema.define(:version => 20120627190220) do
 
   create_table "escapes", :force => true do |t|
     t.string   "title"
@@ -39,6 +39,19 @@ ActiveRecord::Schema.define(:version => 20120627130951) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.string   "current_state"
+  end
+
+  create_table "foursquare_spots", :force => true do |t|
+    t.integer  "escape_id"
+    t.string   "foursquare_id"
+    t.string   "name"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.integer  "checkins"
+    t.integer  "tips"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "url"
   end
 
 end

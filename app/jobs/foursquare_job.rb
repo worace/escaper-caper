@@ -14,12 +14,22 @@ class FoursquareJob
 
     results = client.search_venues(:ll => lat_long)
     venues = results.groups.first.items
-    puts venues.count
-    venues.each do |v|
-      puts v.name
+
+    venues.each do |venue|
+      attrs = {}
+      attrs[:name]           = venue.name
+      attrs[:foursquare_id]  = venue.id
+      attrs[:latitude]       = venue.location.lat.to_s
+      attrs[:longitude]      = venue.location.lng.to_s
+      attrs[:checkins]       = venue.stats.checkinsCount
+      attrs[:tips]           = venue.stats.tipCount
+      attrs[:url]            = venue.url
+
+      FoursquareSpot.find_or_create_by_foursquare_id_and_escape_id(attrs[:foursquare_id],
+                                                                   escape["id"],
+                                                                   attrs)
     end
   end
-
 end
 
 # Hashie format is:
