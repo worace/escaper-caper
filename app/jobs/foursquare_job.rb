@@ -25,9 +25,23 @@ class FoursquareJob
       attrs[:tips]           = venue.stats.tipCount
       attrs[:url]            = venue.url
 
-      FoursquareSpot.find_or_create_by_foursquare_id_and_escape_id(attrs[:foursquare_id],
+      spot = FoursquareSpot.find_or_create_by_foursquare_id_and_escape_id(attrs[:foursquare_id],
                                                                    escape["id"],
                                                                    attrs)
+      venue.categories.each do |category|
+        attrs ={}
+        attrs[:foursquare_id] = category.id
+        attrs[:name] = category.name
+        attrs[:plural_name] = category.pluralName
+        attrs[:short_name] = category.shortName
+        attrs[:primary] = category.primary
+        attrs[:icon_url] = category.icon
+        attrs[:parent]   = category.parents.first
+        cat = Category.find_or_create_by_foursquare_id(attrs[:foursquare_id], attrs)
+
+        spot.categories << cat
+
+      end
     end
   end
 end

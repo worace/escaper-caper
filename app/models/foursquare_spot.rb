@@ -8,6 +8,9 @@ class FoursquareSpot < ActiveRecord::Base
                   :tips,
                   :url
 
+  has_many :venue_categories
+  has_many :categories, through: :venue_categories
+
   validates_presence_of :foursquare_id, :name, :latitude, :longitude
 
 end
