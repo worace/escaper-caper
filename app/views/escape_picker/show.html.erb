@@ -1,0 +1,4 @@
+
+<div id="escape-categories">
+  <%= collection_select(:category, :category_id, @categories, :id, :name, {:include_blank => 'What do you like?'}) %>
+</div>

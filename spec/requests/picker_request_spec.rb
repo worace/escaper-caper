@@ -28,7 +28,7 @@ describe "Given I am wanting to pick an escape based on my interests" do
     before(:each) { visit root_path }
     it "shows me a dropdown list of categories to select from" do
       within("#escape-categories") do
-        page.should have_selector('<select name="post[category]">')
+        page.should have_selector('select')
       end
     end
   end
