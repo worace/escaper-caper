@@ -36,8 +36,12 @@ task :scrape_escapes => :environment do
 
     lat_long =  escape_doc.css('.directions a').map { |link| link['href'] }.join("").split("=")[-1]
 
-    attrs["latitude"] = lat_long.split(",")[0].strip
-    attrs["longitude"] = lat_long.split(",")[1].strip
+    if lat_long.split(",")[0]
+      attrs["latitude"] = lat_long.split(",")[0].strip
+    end
+    if lat_long.split(",")[1]
+      attrs["longitude"] = lat_long.split(",")[1].strip
+    end
 
     puts attrs.inspect
 

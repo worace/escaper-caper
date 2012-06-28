@@ -21,5 +21,9 @@ describe EscapePicker do
     it "returns an escape whose primary category is the one supplied" do
       picker.escape_for(art_galleries).should == escape
     end
+
+    it "returns a random escape if there are none for the category supplied" do
+      picker.escape_for(restaurants).should be_an(Escape)
+    end
   end
 end
