@@ -8,9 +8,9 @@ describe "Given I am wanting to browse some escapes" do
     end
   end
 
-  context "When I visit the site root" do
+  context "When I visit the escapes index" do
 
-    before(:each) { visit root_path }
+    before(:each) { visit escapes_path }
 
     it "shows me a list of current escapes" do
       within("#escapes") do

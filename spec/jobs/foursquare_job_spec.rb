@@ -14,10 +14,10 @@ describe FoursquareJob do
       escape.foursquare_spots.count.should == 30
       spot = escape.foursquare_spots.last
 
-      spot.name.should == "Yale University - Jonathan Edwards College"
-      spot.latitude.should == "41.309029"
-      spot.longitude.should == "-72.93006"
-      spot.foursquare_id.should == "4b4e28e1f964a5207fe326e3"
+      spot.name.should == "Yale Center for British Art"
+      spot.latitude.should == "41.307837"
+      spot.longitude.should == "-72.930478"
+      spot.foursquare_id.should == "4b05867af964a520856322e3"
     end
 
     it "adds the categories for the venues" do
