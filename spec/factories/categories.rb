@@ -11,7 +11,7 @@ FactoryGirl.define do
     icon_url "https://foursquare.com/img/categories/arts_entertainment/artgallery.png"
   end
 
-  factory :art_gallery, class: Category do
+  factory :art_galleries, class: Category do
     name "Art Gallery"
     plural_name "Art Galleries"
     short_name "Art Gallery"
@@ -21,7 +21,7 @@ FactoryGirl.define do
     icon_url "https://foursquare.com/img/categories/arts_entertainment/artgallery.png"
   end
 
-  factory :cocktail_bar, class: Category do
+  factory :cocktail_bars, class: Category do
     name "Cocktail Bar"
     plural_name "Cocktail Bars"
     short_name "Cocktail"
@@ -31,7 +31,7 @@ FactoryGirl.define do
     icon_url "https://foursquare.com/img/categories/nightlife/cocktails.png"
   end
 
-  factory :restaurant, class: Category do
+  factory :restaurants, class: Category do
     name "Restaurant"
     plural_name "Restaurants"
     short_name "Other - Food"

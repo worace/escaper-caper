@@ -8,6 +8,17 @@ class Escape < ActiveRecord::Base
    has_many :flickr_photos
    has_many :foursquare_spots
 
+   def primary_category
+    count = {}
+    count.default = 0
+    foursquare_spots.each do |spot|
+      spot.categories.each do |cat|
+        count[cat.id] += 1
+      end
+    end
+    count.sort_by { |id, count| count }
+    Category.find(count.first.first)
+   end
 
    def pull_photos
     Resque.enqueue(FlickrJob, self.to_json, ENV['FLICKR_KEY'], ENV['FLICKR_SECRET'])

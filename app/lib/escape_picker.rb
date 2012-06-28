@@ -1,7 +1,9 @@
 class EscapePicker
 
   def escape_for(category)
-
-    Escape.first
+    escapes = Escape.all.select do |e|
+      e.primary_category == category
+    end
+    escapes.first
   end
 end
