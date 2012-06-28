@@ -18,12 +18,13 @@ describe EscapePicker do
     before do
       gallery.categories << art_galleries
     end
-    it "returns an escape whose primary category is the one supplied" do
-      picker.escape_for(art_galleries).should == escape
+    it "returns an escape whose primary category is the parent cat supplied" do
+      parent = art_galleries.parent_category
+      picker.escape_for(parent).should == escape
     end
 
     it "returns a random escape if there are none for the category supplied" do
-      picker.escape_for(restaurants).should be_an(Escape)
+      picker.escape_for(restaurants.parent_category).should be_an(Escape)
     end
   end
 end

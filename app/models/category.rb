@@ -20,3 +20,4 @@ class Category < ActiveRecord::Base
     end
   end
 end
+

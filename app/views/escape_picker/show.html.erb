@@ -1,7 +1,7 @@
 
 <div id="escape-categories">
   <%= form_tag url_for("/escape_picker"), :method => 'post', :id => "category_selector" do %>
-    <%= select_tag "category", options_for_select([["What do you like?", ""]]+ @categories.collect { |c| [c.plural_name, c.id] } ) %>
+    <%= select_tag "category", options_for_select([["What do you like?", ""]]+ @categories.collect { |c| [c.name, c.id] } ) %>
     <%= submit_tag "Escape!" %>
   <% end %>
 </div>

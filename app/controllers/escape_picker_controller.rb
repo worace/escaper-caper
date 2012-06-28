@@ -1,11 +1,11 @@
 class EscapePickerController < ApplicationController
   def show
-    @categories = Category.all
+    @categories = ParentCategory.all
   end
 
   def create
-    category = Category.find(params[:category])
-    escape = EscapePicker.new.escape_for(category)
+    parent_category = ParentCategory.find(params[:category])
+    escape = EscapePicker.new.escape_for(parent_category)
     redirect_to escape_path(escape)
   end
 end

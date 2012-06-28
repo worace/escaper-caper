@@ -30,7 +30,10 @@ describe "Given I am wanting to pick an escape based on my interests" do
   end
 
   context "When I visit the homepage" do
+    let(:parents) {ParentCategory.all}
+
     before(:each) { visit root_path }
+
     it "shows me a dropdown list of categories to select from" do
       within("#escape-categories") do
         page.should have_selector('select#category')
@@ -39,14 +42,14 @@ describe "Given I am wanting to pick an escape based on my interests" do
 
     it "includes the categories in the select box" do
       within("select#category") do
-        categories.each do |c|
-          page.should have_content(c.plural_name)
+        parents.each do |pc|
+          page.should have_content(pc.name)
         end
       end
     end
 
     it "takes me to an escape for the category I select" do
-      page.select("Restaurants", :from => "category")
+      page.select("Food", :from => "category")
       click_button "Escape!"
       current_path.should == escape_path(food_escape)
     end

@@ -11,8 +11,8 @@ describe Escape do
       gallery.categories << art_galleries
     end
 
-    it "returns the primary category for the escape based on its attractions" do
-      escape.primary_category.should == art_galleries
+    it "returns the primary parent category for the escape based on its attractions" do
+      escape.primary_category.should == art_galleries.parent_category
     end
   end
 end
