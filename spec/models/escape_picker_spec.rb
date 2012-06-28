@@ -26,5 +26,17 @@ describe EscapePicker do
     it "returns a random escape if there are none for the category supplied" do
       picker.escape_for(restaurants.parent_category).should be_an(Escape)
     end
+
+    it "will function if an escape has a category with nil parent" do
+      new_cat = FactoryGirl.create(:category, parent: nil)
+      new_cat_with_parent = FactoryGirl.create(:category, parent: "Art")
+      new_spot = FactoryGirl.create(:restaurant, escape_id: escape.id)
+
+      new_spot.categories << new_cat
+      new_spot.categories << new_cat_with_parent
+
+      picker.escape_for(new_cat_with_parent.parent_category).should == escape
+
+    end
   end
 end

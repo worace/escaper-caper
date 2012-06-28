@@ -5,7 +5,7 @@ class EscapePicker
       e.primary_category == parent_cat
     end
     if escapes.any?
-      escapes.first
+      escapes[rand(escapes.count)]
     else
       Escape.find(:first, :offset =>rand(Escape.count))
     end

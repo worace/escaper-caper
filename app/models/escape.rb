@@ -13,11 +13,17 @@ class Escape < ActiveRecord::Base
     count.default = 0
     foursquare_spots.each do |spot|
       spot.categories.each do |cat|
-        count[cat.parent_category.id] += 1
+        if cat.parent_category
+          count[cat.parent_category.id] += 1
+        end
       end
     end
     count.sort_by { |id, count| count }
-    ParentCategory.find(count.first.first)
+    if count.any?
+      ParentCategory.find(count.first.first)
+    else
+      ""
+    end
    end
 
    def pull_photos
