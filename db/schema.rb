@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627202210) do
+ActiveRecord::Schema.define(:version => 20120628175551) do
 
   create_table "categories", :force => true do |t|
     t.string   "icon_url"
@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(:version => 20120627202210) do
     t.string   "short_name"
     t.string   "foursquare_id"
     t.boolean  "primary"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "parent"
+    t.integer  "parent_category_id"
   end
 
   create_table "escapes", :force => true do |t|
@@ -64,6 +65,13 @@ ActiveRecord::Schema.define(:version => 20120627202210) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.string   "url"
+  end
+
+  create_table "parent_categories", :force => true do |t|
+    t.string   "name"
+    t.string   "display_name"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "venue_categories", :force => true do |t|

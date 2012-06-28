@@ -13,4 +13,14 @@ describe Category do
     venue.categories.count.should == 1
     venue.venue_categories.count.should == 1
   end
+
+  it "sets its parent_category after creation" do
+    category = FactoryGirl.create(:category)
+    category.parent_category.name.should == "Arts & Entertainment"
+  end
+
+  it "won't set anything for a nil parent" do
+    category = FactoryGirl.create(:category, parent: nil)
+    category.parent_category.should be_nil
+  end
 end
