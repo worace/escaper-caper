@@ -10,6 +10,7 @@ gem 'resque'
 gem 'resque-pool'
 
 gem 'aasm'
+gem 'bourbon', '~> 2.1.1'
 
 gem 'flickraw'
 gem 'yelpster'
