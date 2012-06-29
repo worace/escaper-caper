@@ -14,4 +14,7 @@
 /log/*.log
 /tmp
 
+# Ignore database config to set up on server
+/config/database.yml
+
 coverage
