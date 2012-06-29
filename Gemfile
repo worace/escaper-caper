@@ -4,12 +4,17 @@ gem 'rails', '3.2.3'
 
 gem 'nokogiri'
 gem 'mechanize'
-gem 'resque'
-gem 'flickraw'
-gem 'aasm'
 gem 'faraday'
+
+gem 'resque'
+gem 'resque-pool'
+
+gem 'aasm'
+
+gem 'flickraw'
 gem 'yelpster'
 gem 'foursquare2'
+
 gem 'pg'
 gem 'unicorn'
 gem 'capistrano'
