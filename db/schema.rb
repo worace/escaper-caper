@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120628175551) do
+ActiveRecord::Schema.define(:version => 20120629172024) do
 
   create_table "categories", :force => true do |t|
     t.string   "icon_url"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20120628175551) do
     t.string   "title"
     t.text     "description"
     t.string   "venue"
-    t.string   "details"
+    t.text     "details"
     t.string   "price"
     t.string   "phone"
     t.string   "street"
