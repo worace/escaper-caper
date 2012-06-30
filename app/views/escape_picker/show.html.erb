@@ -4,6 +4,13 @@
     <h1>Escape to . . .</h1>
   </div>
   <div id="category-row-1" class="category-row row">
+    <% @categories.each do |c| %>
+      <%= form_tag url_for("/escape_picker"), :method => 'post', :class => "category-selector" do %>
+        <%= hidden_field_tag 'id', c.id %>
+        <%= image_submit_tag c.icon_url %>
+      <% end %>
+    <% end %>
+
     <div id="food" class="fourcol">
       <a class="category-link" href="#">
         <img class="category-icon" src="https://foursquare.com/img/categories/food/default_256.png">
@@ -33,7 +40,7 @@
     <div id="escape-categories">
       <%= form_tag url_for("/escape_picker"), :method => 'post', :id => "category_selector" do %>
         <%= select_tag "category", options_for_select([["What do you like?", ""]]+ @categories.collect { |c| [c.name, c.id] } ) %>
-        <%= submit_tag "Escape!" %>
+        <%= image_submit_tag "Escape!" %>
       <% end %>
     </div>
   </div>

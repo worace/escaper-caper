@@ -4,7 +4,7 @@ class EscapePickerController < ApplicationController
   end
 
   def create
-    parent_category = ParentCategory.find(params[:category])
+    parent_category = ParentCategory.find(params[:id])
     escape = EscapePicker.new.escape_for(parent_category)
     redirect_to escape_path(escape)
   end
