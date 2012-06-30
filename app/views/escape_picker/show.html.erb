@@ -1,8 +1,40 @@
-<h1> Escaper Caper </h1>
 
-<div id="escape-categories">
-  <%= form_tag url_for("/escape_picker"), :method => 'post', :id => "category_selector" do %>
-    <%= select_tag "category", options_for_select([["What do you like?", ""]]+ @categories.collect { |c| [c.name, c.id] } ) %>
-    <%= submit_tag "Escape!" %>
-  <% end %>
+<div id="picker-container" class="container">
+  <div id="headline-row" class="row">
+    <h1>Escape to . . .</h1>
+  </div>
+  <div id="category-row-1" class="category-row row">
+    <div id="food" class="fourcol">
+      <a class="category-link" href="#">
+        <img class="category-icon" src="https://foursquare.com/img/categories/food/default_256.png">
+      </a>
+    </div>
+    <div id="outdoors" class="fourcol">
+      <img class="category-icon" src="https://foursquare.com/img/categories/parks_outdoors/default_256.png">
+    </div>
+    <div id="culture" class="fourcol last">
+      <img class="category-icon" src="https://foursquare.com/img/categories/arts_entertainment/default_256.png">
+    </div>
+  </div>
+
+  <div id="category-row-2" class="category-row row">
+    <div id="nightlife" class="fourcol">
+      <img class="category-icon" src="https://foursquare.com/img/categories/nightlife/default_256.png">
+    </div>
+    <div id="shopping" class="fourcol">
+      <img class="category-icon" src="https://foursquare.com/img/categories/shops/default_256.png">
+    </div>
+    <div id="college" class="fourcol last">
+      <img class="category-icon" src="https://foursquare.com/img/categories/education/default_256.png">
+    </div>
+  </div>
+
+  <div id="picker-row" class="row">
+    <div id="escape-categories">
+      <%= form_tag url_for("/escape_picker"), :method => 'post', :id => "category_selector" do %>
+        <%= select_tag "category", options_for_select([["What do you like?", ""]]+ @categories.collect { |c| [c.name, c.id] } ) %>
+        <%= submit_tag "Escape!" %>
+      <% end %>
+    </div>
+  </div>
 </div>

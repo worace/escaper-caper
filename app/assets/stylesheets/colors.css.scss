@@ -11,3 +11,11 @@ $spice:         rgba(235,63,60,1);
 $wine:          rgba(131,46,47,1);
 
 $whale:         rgba(38,38,38,1);
+
+
+$navcolor:      $whale;
+$navgradient:   darken($navcolor, 15%);
+$dropshadow:    $whale;
+$text:          $whale;
+$picker-background: $slushie;
+

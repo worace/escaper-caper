@@ -7,8 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="navbar">
+    <div id="navbar-container" class="container">
+      <div id="navbar-row" class="row">
+        <ul id="nav-list" class="twelvecol">
+          <li class="brand">
+          <h1>
+            <a id="home-link" href="/">escaper caper</a>
+          </h1>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-<%= yield %>
+  <div id="main-content">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

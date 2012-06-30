@@ -1,13 +1,53 @@
 @import "colors";
 
 body {
-  color: $whale;
-  /*background-image: url(orange-flowers.gif);*/
-  background-image: url(wallpaper1.png);
-  background-image: url(grissaille.jpeg);
-  background-repeat: repeat;
+  color: $text;
+  /*background-repeat: repeat;*/
   /*font-family: "Lato", "helvetica", sans-serif;*/
   /*text-shadow:0 0 1px transparent;*/
 }
 
+  /*background-image: url(orange-flowers.gif);*/
+  /*background-image: url(wallpaper1.png);*/
+  /*background-image: url(grissaille.jpeg);*/
 
+a {
+  color: $text;
+  &:link {
+    text-decoration: none;
+  }
+  &:visited {
+    color: $text;
+  }
+  &:hover {
+    color: white;
+    background: magenta;
+  }
+}
+
+#home-link {
+  color: white;
+  font-size: 24px;
+}
+
+.brand {
+  margin-top: 16px;
+}
+
+#navbar {
+  height: 80px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  margin-bottom: 0;
+  top: 0;
+  background-image: none;
+  background-color: $navcolor;
+  /*@include linear-gradient($navcolor, $navgradient);*/
+  @include box-shadow(0 0 9px 1px $dropshadow);
+}
+
+#main-content {
+  margin-top: 80px;
+}
