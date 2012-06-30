@@ -7,19 +7,15 @@
     <% i = 0 %>
     <% @categories.each do |c| %>
       <% i +=1 %>
-      <%= form_tag url_for("/escape_picker"), :method => 'post', :class => "category-selector #{i%3==0 ? 'fourcol' : 'fourcol last'}" do %>
-        <%= hidden_field_tag 'id', c.id %>
-        <%= image_submit_tag c.icon_url %>
-      <% end %>
+      <div id="category-<%=c.id%>" class="category-selector <%= i%3==0 ? 'fourcol' : 'fourcol last'%>">
+        <%= form_tag url_for("/escape_picker"), :method => 'post' do %>
+          <%= hidden_field_tag 'id', c.id %>
+          <%= image_submit_tag c.icon_url %>
+        <% end %>
+        <div id="category-name">
+          <p><%=c.name%></p>
+        </div>
+      </div>
     <% end %>
-  </div>
-
-  <div id="picker-row" class="row">
-    <div id="escape-categories">
-      <%= form_tag url_for("/escape_picker"), :method => 'post', :id => "category_selector" do %>
-        <%= select_tag "category", options_for_select([["What do you like?", ""]]+ @categories.collect { |c| [c.name, c.id] } ) %>
-        <%= image_submit_tag "Escape!" %>
-      <% end %>
-    </div>
   </div>
 </div>
