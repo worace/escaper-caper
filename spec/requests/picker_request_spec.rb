@@ -49,9 +49,7 @@ describe "Given I am wanting to pick an escape based on my interests" do
       let(:food_parent) { ParentCategory.find_by_name("Food") }
 
       it "takes me to an escape for the category I select" do
-        within("#category-#{food_parent.id}") do
-          click_link_or_button("#category-#{food_parent.id}-submit")
-        end
+        click_link_or_button("category-#{food_parent.id}-link")
         current_path.should == escape_path(food_escape)
       end
     end
