@@ -1,19 +1,38 @@
+<script>
+  $(function(){
+    $("#slides").slides({
+     preload: true,
+     effect: 'fade',
+     pagination: false,
+     bigTarget: true,
+     autoHeight: true
+    });
+  });
+</script>
 
-<div id='<%="escape_#{@escape.id}"%>'>
-  <h1><%= @escape.title %></h1>
+<div id="escape-container" class="container">
+  <div id="escape-row" class="row">
+    <div id='<%="escape_#{@escape.id}"%>'>
+      <h1><%= @escape.title %></h1>
 
-  <div id='photos' class='escape_flickr_photos'>
-    <% @flickr_photos.each do |fp| %>
-      <img alt="<%= fp.title %>" src="<%=fp.url_med%>">
-    <% end %>
-  </div>
-
-  <div id='attractions' class='escape_foursquare_venues'>
-    <% @foursquare_spots.each do |venue| %>
-      <div id="attraction_<%=venue.id%>">
-        <h2><%= venue.name %></h2>
-        <h4><%= venue.checkins %> others escaped here </h4>
+      <div id='slides' class='escape_flickr_photos sixcol'>
+        <div class="slides_container">
+          <% @flickr_photos.each do |fp| %>
+            <img alt="<%= fp.title %>" src="<%=fp.url_med%>">
+          <% end %>
+        </div>
+        <a href="#" class="prev"><img src="<%= asset_path('arrow-prev.png')%>" width="24" height="43" alt="Arrow Prev"></a>
+        <a href="#" class="next"><img src="<%= asset_path('arrow-next.png')%>" width="24" height="43" alt="Arrow Next"></a>
       </div>
-    <% end %>
+
+      <div id='attractions' class='escape_foursquare_venues'>
+        <% @foursquare_spots.each do |venue| %>
+          <div id="attraction_<%=venue.id%>">
+            <h2><%= venue.name %></h2>
+            <h4><%= venue.checkins %> others escaped here </h4>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
