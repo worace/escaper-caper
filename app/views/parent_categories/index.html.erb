@@ -9,11 +9,11 @@
         <% i +=1 %>
         <div id="category-<%=c.id%>" class="category-selector <%= i%3==0 ? 'fourcol' : 'fourcol last'%>">
           <% if c.icon_url %>
-            <%= link_to image_tag(c.icon_url), parent_category_path(c), id: "category-#{c.id}-link" %>
+            <%= link_to image_tag(c.icon_url), parent_category_path(c), id: "category-#{c.id}-link", class: "category-link" %>
           <% else %>
-            <%= link_to image_tag("https://foursquare.com/img/categories/parks_outdoors/default_256.png"), parent_category_path(c), id: "category-#{c.id}-link" %>
+            <%= link_to image_tag("https://foursquare.com/img/categories/parks_outdoors/default_256.png"), parent_category_path(c), id: "category-#{c.id}-link", class: "category-link" %>
           <% end %>
-          <div id="category-<%=c.id%>-name">
+          <div id="category-<%=c.id%>-name" class="category-name">
             <p><%=c.name%></p>
           </div>
         </div>

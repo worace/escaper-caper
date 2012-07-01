@@ -1,0 +1,37 @@
+@import "colors";
+
+#picker-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: $picker-background;
+}
+
+#headline-row {
+  h1 {
+    color: white;
+  }
+}
+
+.category-row {
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.category-selector {
+  margin: 0 0 20px 0;
+  padding: 0px;
+  img {
+    border-radius: 44px;
+    -moz-border-radius: 44px;
+    -webkit-border-radius: 44px;
+    &:hover {
+      @include box-shadow(0 0 12px 1px white);
+    }
+  }
+}
+
+.category-name {
+  color: white;
+  margin-left: 40px;
+}
