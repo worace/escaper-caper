@@ -1,0 +1,25 @@
+<div id="picker-container" class="container">
+  <div id="headline-row" class="row">
+    <h1>Escape to . . .</h1>
+  </div>
+  <div id="category-row" class="category-row row">
+    <div id="parent-categories">
+      <% i = 0 %>
+      <% @categories.each do |c| %>
+        <% i +=1 %>
+        <div id="category-<%=c.id%>" class="category-selector <%= i%3==0 ? 'fourcol' : 'fourcol last'%>">
+          <div id="category-<%=c.id%>-link">
+            <% if c.icon_url %>
+              <%= link_to image_tag(c.icon_url), parent_category_path(c) %>
+            <% else %>
+              <%= link_to parent_category_path(c), image_tag("https://foursquare.com/img/categories/parks_outdoors/default_256.png") %>
+            <% end %>
+          </div>
+          <div id="category-<%=c.id%>-name">
+            <p><%=c.name%></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
