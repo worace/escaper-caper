@@ -2,6 +2,7 @@
 <div id="top-container" class="custom-container">
   <div id="escape-details" class="center-col">
     <h1>Your Escape: <span id="escape-title"><%= @escape.title %></span></h1>
+    <h5>The Details</h5>
     <p><%= @escape.details %></p>
   </div>
 </div>
@@ -33,25 +34,18 @@
       offset: 20
     });
 
-    var rewooked = false;
     $("#wookmarks-container").mouseover(function () {
-      if (rewooked === false) {
-      rewooked = true;
       $('.wookmark').wookmark({
         container: $('#wookmarks-inner'),
         offset: 20
       });
-      }
     });
 
     $(window).scroll(function () {
-      if (rewooked === false) {
-      rewooked = true;
       $('.wookmark').wookmark({
         container: $('#wookmarks-inner'),
         offset: 20
       });
-      }
     });
   });
 </script>
