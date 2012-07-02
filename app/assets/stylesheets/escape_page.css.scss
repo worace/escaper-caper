@@ -1,21 +1,49 @@
 @import "colors";
+$wkmkradius: 8px;
 
 .custom-container {
+  padding-top: 20px;
   width: 100%;
 }
 
 .center-col {
-  padding-top: 40px;
   width: 1040px;
   margin: 0 auto;
+  position: relative;
 }
+
 
 .wookmark {
   width: 320px;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  background-color: $lightgrey;
+  min-height: 240px;
+  /*max-height: */
+  /*overflow: auto;*/
+  border-radius: $wkmkradius;
+  -moz-border-radius: $wkmkradius;
+  -webkit-border-radius: $wkmkradius;
+  /*margin-right: 20px;*/
+  /*margin-bottom: 20px;*/
   display: inline-block;
 }
+
+.wookmark.foursquare {
+}
+
+.flickr-image {
+  width: 280px;
+  display: block;
+  padding: 20px 20px;
+}
+.wookmark.flickr {
+  img {
+  }
+}
+
+#wookmarks-inner {
+
+}
+
 #top-container {
   background-color: $clementine;
 }
