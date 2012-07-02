@@ -1,7 +1,9 @@
 class Escape < ActiveRecord::Base
    attr_accessible :title, :description, :venue, :details,
                    :price, :phone, :street, :city, :state,
-                   :zipcode, :expiration, :latitude, :longitude
+                   :zipcode, :expiration, :latitude, :longitude,
+                   :livingsocial_url
+
 
    after_create :pull_photos, :pull_attractions
 

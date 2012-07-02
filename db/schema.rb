@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120630194239) do
+ActiveRecord::Schema.define(:version => 20120702180534) do
 
   create_table "categories", :force => true do |t|
     t.string   "icon_url"
@@ -38,10 +38,11 @@ ActiveRecord::Schema.define(:version => 20120630194239) do
     t.string   "state"
     t.string   "zipcode"
     t.string   "expiration"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "latitude"
     t.string   "longitude"
+    t.string   "livingsocial_url"
   end
 
   create_table "flickr_photos", :force => true do |t|
