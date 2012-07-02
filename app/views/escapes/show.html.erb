@@ -1,33 +1,36 @@
 <%#<script src="http://bxslider.com/sites/default/files/jquery.bxSlider.min.js" type="text/javascript"></script>%>
 <script type="text/javascript">
-  $(document).ready(function(){
-    $('#flickr-carousel').bxSlider();
-  });
+  <%#$(document).ready(function(){%>
+    <%#$('#flickr-carousel').bxSlider();%>
+  <%#});%>
+
+  <%#$(document).ready(function() {%>
+    <%#$('.wookmark').wookmark({%>
+      <%#container: $('#wookmarks-inner'),%>
+      <%#offset: 10,%>
+      <%#autoResize: true%>
+    <%#});%>
+  <%#});%>
 </script>
 
-
-<div id="escape-container" class="container">
-  <div id="escape-row" class="row">
-    <div id='<%="escape_#{@escape.id}"%>'>
-      <h1><%= @escape.title %></h1>
-
-      <ul id='flickr-carousel' class="sixcol">
-          <% @flickr_photos.each do |fp| %>
-            <li class="item">
-              <img alt="<%= fp.title %>" src="<%=fp.url_med%>">
-            </li>
-          <% end %>
-      </ul>
-
-
-      <div id='attractions' class='escape_foursquare_venues'>
-        <% @foursquare_spots.each do |venue| %>
-          <div id="attraction_<%=venue.id%>">
-            <h2><%= venue.name %></h2>
-            <h4><%= venue.checkins %> others escaped here </h4>
-          </div>
-        <% end %>
-      </div>
-    </div>
+<div id="top-container" class="custom-container">
+  <div id="escape-details" class="center-col">
+    <h1>Escape:</h1>
+    <h3><%= @escape.title %></h3>
+    <p><%= @escape.details %></p>
   </div>
 </div>
+
+<div id="wookmarks-container" class="custom-container">
+  <div id="wookmarks-inner" class="center-col">
+    <% @items.each do |item| %>
+      <% if item.is_a?(FlickrPhoto) %>
+        <%= render partial: "flickr_photo", locals: {photo: item} %>
+      <% end %>
+      <% if item.is_a?(FoursquareSpot) %>
+        <%= render partial: "foursquare_spot", locals: {spot: item} %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
