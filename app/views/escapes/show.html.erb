@@ -8,6 +8,7 @@
 
 <div id="wookmarks-heading-container" class="custom-container">
   <div id="wookmarks-heading" class="center-col">
+    <h2 id="wookmarks-intro">Here are some photos and attractions to get you in the traveling mindset</h2>
   </div>
 </div>
 
@@ -30,6 +31,27 @@
     $('.wookmark').wookmark({
       container: $('#wookmarks-inner'),
       offset: 20
+    });
+
+    var rewooked = false;
+    $("#wookmarks-container").mouseover(function () {
+      if (rewooked === false) {
+      rewooked = true;
+      $('.wookmark').wookmark({
+        container: $('#wookmarks-inner'),
+        offset: 20
+      });
+      }
+    });
+
+    $(window).scroll(function () {
+      if (rewooked === false) {
+      rewooked = true;
+      $('.wookmark').wookmark({
+        container: $('#wookmarks-inner'),
+        offset: 20
+      });
+      }
     });
   });
 </script>

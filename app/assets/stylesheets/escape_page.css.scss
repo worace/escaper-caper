@@ -12,6 +12,18 @@ $wkmkradius: 8px;
   position: relative;
 }
 
+#wookmarks-heading-container {
+  background-color: $slushie;
+}
+
+#wookmarks-intro {
+  color: white;
+  padding-left: 20px;
+  border-bottom: 2px dashed white;
+}
+#wookmarks-heading{
+  height: 60px;
+}
 
 .wookmark {
   width: 320px;
