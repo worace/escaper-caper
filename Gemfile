@@ -1,21 +1,18 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
-
 gem 'nokogiri'
 gem 'mechanize'
 gem 'faraday'
-
 gem 'resque'
 gem 'resque-pool'
-
+gem 'redis'
+gem 'redis-namespace'
 gem 'aasm'
 gem 'bourbon', '~> 2.1.1'
-
 gem 'flickraw'
 gem 'yelpster'
 gem 'foursquare2'
-
 gem 'pg'
 gem 'unicorn'
 gem 'capistrano'

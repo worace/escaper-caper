@@ -2,7 +2,7 @@ class EscapePicker
 
   def escape_for(parent_cat)
     escapes = Escape.all.select do |e|
-      e.primary_category == parent_cat
+      e.parent_category == parent_cat
     end
     if escapes.any?
       escapes[rand(escapes.count)]

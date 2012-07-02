@@ -8,22 +8,44 @@ class Escape < ActiveRecord::Base
    has_many :flickr_photos
    has_many :foursquare_spots
 
-   def primary_category
-    count = {}
-    count.default = 0
-    foursquare_spots.each do |spot|
-      spot.categories.each do |cat|
-        if cat.parent_category
-          count[cat.parent_category.id] += 1
-        end
-      end
-    end
-    count.sort_by { |id, count| count }
-    if count.any?
-      ParentCategory.find(count.first.first)
-    else
-      ""
-    end
+   def parent_category
+     return cached_category if cached_category
+     counts = category_counts
+     if counts.any?
+       pc = ParentCategory.find(counts.first.first)
+       set_cached_category(pc)
+       return pc
+     else
+       pc = ParentCategory.find_by_name("Travel & Transport")
+       set_cached_category(pc)
+       return pc
+     end
+   end
+
+   def category_counts
+     count = {}
+     count.default = 0
+     foursquare_spots.each do |spot|
+       spot.categories.each do |cat|
+         if cat.parent_category
+           count[cat.parent_category.id] += 1
+         end
+       end
+     end
+     count.sort_by { |id, count| count }
+     count
+   end
+
+   def picker_cache_key
+     "escape:#{self.id}"
+   end
+
+   def cached_category
+     ParentCategory.find_by_id(PickerCache.cat_id(picker_cache_key))
+   end
+
+   def set_cached_category(cat)
+     PickerCache.set_cat_id(picker_cache_key, cat.id.to_s)
    end
 
    def pull_photos

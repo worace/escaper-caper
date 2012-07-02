@@ -254,6 +254,8 @@ DEPENDENCIES
   nokogiri
   pg
   rails (= 3.2.3)
+  redis
+  redis-namespace
   resque
   resque-pool
   rspec-rails (~> 2.0)
