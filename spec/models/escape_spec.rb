@@ -36,6 +36,31 @@ describe Escape do
     end
   end
 
+  context("#checkout_url") do
+    let(:escape) { FactoryGirl.create(:escape) }
+    it "returns the url to purchase the escape from livingsocial" do
+      escape.checkout_url.should == "https://www.livingsocial.com/deals/376890/checkout/new"
+    end
+
+    it "links to the escape home page if no id is present" do
+      escape.livingsocial_id = nil
+      escape.checkout_url.should == "http://livingsocial.com/escapes"
+    end
+  end
+
+  context("#original_url") do
+    let(:escape) { FactoryGirl.create(:escape) }
+    it "returns the url for the escape on livingsocial.com" do
+      escape.original_url.should == "http://www.livingsocial.com/escapes/376890-chesapeake-beach-resort"
+    end
+
+    it "links to the escape home page if no id is present" do
+      escape.livingsocial_url = nil
+      escape.original_url.should == "http://livingsocial.com/escapes"
+    end
+  end
+
+
   context("#picker_cache_key") do
     let!(:escape) { FactoryGirl.create(:culture_escape) }
     it "returns a string to use as a key in the cache hash" do

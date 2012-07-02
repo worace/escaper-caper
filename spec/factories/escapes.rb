@@ -11,6 +11,8 @@ FactoryGirl.define do
     state Faker::Address.state_abbr
     zipcode Faker::Address.zip_code
     expiration "July 04, 2012"
+    livingsocial_url "http://www.livingsocial.com/escapes/376890-chesapeake-beach-resort"
+    livingsocial_id "376890"
   end
 
   factory :culture_escape, class: Escape do

@@ -2,13 +2,26 @@ class Escape < ActiveRecord::Base
    attr_accessible :title, :description, :venue, :details,
                    :price, :phone, :street, :city, :state,
                    :zipcode, :expiration, :latitude, :longitude,
-                   :livingsocial_url
+                   :livingsocial_url, :livingsocial_id
 
 
    after_create :pull_photos, :pull_attractions
 
    has_many :flickr_photos
    has_many :foursquare_spots
+
+   def checkout_url
+     if self.livingsocial_id
+       "https://www.livingsocial.com/deals/#{self.livingsocial_id}/checkout/new"
+     else
+      "http://livingsocial.com/escapes"
+     end
+   end
+
+   def original_url
+     return livingsocial_url if livingsocial_url
+     "http://livingsocial.com/escapes"
+   end
 
    def parent_category
      return cached_category if cached_category

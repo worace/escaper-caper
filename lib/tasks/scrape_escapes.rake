@@ -18,6 +18,11 @@ task :scrape_escapes => :environment do
 
     puts escape_page.uri.to_s.inspect
 
+    orig_url = escape_page.uri.to_s
+    LOCATION_REGEX = /(\d+)/
+    LOCATION_REGEX =~ orig_url
+    ls_id = $1
+
     # parse Mechanize'd escape with Nokogiri
     escape_doc = Nokogiri::HTML(open(escape_page.uri.to_s))
 
@@ -35,6 +40,7 @@ task :scrape_escapes => :environment do
     attrs["zipcode"]    = escape_doc.xpath("//br/following-sibling::text()").text.split(" ").last
     attrs["expiration"] = escape_doc.css('.fine-print p').text.split(%r{\b[A-Z]+\b}).last.strip
     attrs["livingsocial_url"] = escape_page.uri.to_s
+    attrs["livingsocial_id"] = ls_id.to_s
 
     lat_long =  escape_doc.css('.directions a').map { |link| link['href'] }.join("").split("=")[-1]
 
@@ -47,7 +53,8 @@ task :scrape_escapes => :environment do
 
     puts attrs.inspect
 
-    Escape.find_or_create_by_title(attrs["title"], attrs)
+    e = Escape.find_or_create_by_title(attrs["title"], attrs)
+    e.update_attributes(attrs)
 
     # courtesy sleep throttle
     sleep(1)
