@@ -1,4 +1,17 @@
 
+  <div id="pick-again">
+    <div id="pick-again-inner" class="center-col">
+      <% @categories.each do |c| %>
+        <% if c.icon_url %>
+          <%= link_to image_tag(c.icon_url), parent_category_path(c), id: "category-#{c.id}-link", class: "category-link" %>
+        <% else %>
+          <%= link_to image_tag("https://foursquare.com/img/categories/parks_outdoors/default_256.png"), parent_category_path(c), id: "category-#{c.id}-link", class: "category-link" %>
+        <% end %>
+      <% end %>
+      <span>pick again!</span>
+    </div>
+  </div>
+
 <div id="top-container" class="custom-container">
   <div id="escape-details" class="center-col">
     <h1>Your Escape: <span id="escape-title"><%= @escape.title %></span></h1>
