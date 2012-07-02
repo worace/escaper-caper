@@ -39,7 +39,9 @@ class FoursquareJob
         attrs[:parent]   = category.parents.first
         cat = Category.find_or_create_by_foursquare_id(attrs[:foursquare_id], attrs)
 
-        spot.categories << cat
+        unless spot.categories.include?(cat)
+          spot.categories << cat
+        end
 
       end
     end
