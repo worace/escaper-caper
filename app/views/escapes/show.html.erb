@@ -6,6 +6,11 @@
   </div>
 </div>
 
+<div id="wookmarks-heading-container" class="custom-container">
+  <div id="wookmarks-heading" class="center-col">
+  </div>
+</div>
+
 <div id="wookmarks-container" class="custom-container">
   <div id="wookmarks-inner" class="center-col">
     <% @items.each do |item| %>
@@ -13,7 +18,7 @@
         <%= render partial: "flickr_photo", locals: {photo: item} %>
       <% end %>
       <% if item.is_a?(FoursquareSpot) %>
-        <%= render partial: "foursquare_spot", locals: {spot: item} %>
+        <%= render partial: "foursquare_spot", locals: {venue: item} %>
       <% end %>
     <% end %>
   </div>

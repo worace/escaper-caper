@@ -21,8 +21,7 @@ a {
     color: $text;
   }
   &:hover {
-    color: white;
-    background: magenta;
+    border-bottom: 1px dashed $honeycomb;
   }
 }
 

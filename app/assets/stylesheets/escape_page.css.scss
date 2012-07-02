@@ -29,6 +29,17 @@ $wkmkradius: 8px;
 .venue-details {
   display: block;
   padding: 20px 20px;
+  img.venue-icon {
+    display: inline;
+  }
+  .venue-name {
+    margin-bottom: 10px;
+  }
+  .venue-category {
+    margin-bottom: 10px;
+  }
+  .venue-checkins {
+  }
 }
 
 .wookmark.flickr {

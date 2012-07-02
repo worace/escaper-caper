@@ -1,9 +1,12 @@
-<div id="attraction_<%=spot.id%>" class="wookmark foursquare">
+<div id="attraction_<%=venue.id%>" class="wookmark foursquare">
   <div class="venue-details">
-    <h2><%= spot.name %></h2>
-    <% if spot.categories.any? %>
-      <img src=<%=spot.categories.first.icon_url%>>
-    <% end %>
-    <h4><%= spot.checkins %> others escaped here </h4>
+    <h2 class="venue-name"><%= link_to venue.name, venue.foursquare_link %></h2>
+    <div class="venue-category">
+      <% if venue.categories.any? %>
+        <img class="venue-icon" src=<%=venue.categories.first.icon_url%>>
+        <span><%=venue.categories.first.name%></span>
+      <% end %>
+    </div>
+    <h4 class="venue-checkins"><%= venue.checkins %> others escaped here </h4>
   </div>
 </div>

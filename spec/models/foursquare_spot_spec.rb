@@ -18,6 +18,12 @@ describe FoursquareSpot do
       spot = FactoryGirl.build(:foursquare_spot, :longitude => "")
       spot.should_not be_valid
     end
+  end
 
+  context "#foursquare_link" do
+    let(:venue) { FactoryGirl.create(:foursquare_spot) }
+    it "returns the link to the venue's page on foursquare" do
+      venue.foursquare_link.should == "https://foursquare.com/v/4b05867af964a520856322e3"
+    end
   end
 end
