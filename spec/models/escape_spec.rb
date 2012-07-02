@@ -14,6 +14,11 @@ describe Escape do
       escape.parent_category.should == art_galleries.parent_category
     end
 
+    it "returns a default category for escapes not having any venues" do
+      sad_escape = FactoryGirl.create(:food_escape)
+      sad_escape.parent_category.should == ParentCategory.last
+    end
+
     context "using the cache" do
       before do
         PickerCache.clear_keys

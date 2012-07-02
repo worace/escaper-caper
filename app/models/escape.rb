@@ -16,7 +16,7 @@ class Escape < ActiveRecord::Base
        set_cached_category(pc)
        return pc
      else
-       pc = ParentCategory.find_by_name("Travel & Transport")
+       pc = ParentCategory.last
        set_cached_category(pc)
        return pc
      end
