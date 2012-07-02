@@ -15,8 +15,9 @@
 <div id="top-container" class="custom-container">
   <div id="escape-details" class="center-col">
     <h1>Your Escape: <span id="escape-title"><%= link_to @escape.title, @escape.original_url, class: "escape-link" %></span></h1>
-    <h4 class="escape-location">Location: <%=@escape.city%>, <%=@escape.state%></h4>
-    <h4>The Details</h4>
+    <h4 class="escape-location escape-info">Location: <%=@escape.city%>, <%=@escape.state%></h4>
+    <h4 class="escape-price escape-info">Price: <%=@escape.price%></h4>
+    <h4 class="escape-info">The Details</h4>
     <p><%= @escape.details %></p>
     <%= link_to "Buy Now", @escape.checkout_url, class: "checkout-link" %>
   </div>

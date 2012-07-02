@@ -14,7 +14,7 @@
             <%= link_to image_tag("https://foursquare.com/img/categories/parks_outdoors/default_256.png"), parent_category_path(c), id: "category-#{c.id}-link", class: "category-link" %>
           <% end %>
           <div id="category-<%=c.id%>-name" class="category-name">
-            <p><%=c.name%></p>
+            <p><%=c.display_name%></p>
           </div>
         </div>
       <% end %>
