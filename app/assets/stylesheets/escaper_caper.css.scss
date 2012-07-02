@@ -25,6 +25,9 @@ a {
   }
 }
 
+#nav-list{
+  padding-top: 24px;
+}
 #home-link {
   color: white;
   font-size: 24px;
@@ -32,6 +35,16 @@ a {
 
 .brand {
   margin-top: 16px;
+}
+
+#escapes-link {
+  display: inline;
+  padding-top: 8px;
+  a {
+    font-size: 14px;
+    color: white;
+  }
+  float: right;
 }
 
 #navbar {
@@ -44,9 +57,9 @@ a {
   top: 0;
   background-image: none;
   background-color: $navcolor;
-  /*@include linear-gradient($navcolor, $navgradient);*/
   @include box-shadow(0 0 9px 1px $dropshadow);
 }
+
 
 #main-content {
   margin-top: 80px;

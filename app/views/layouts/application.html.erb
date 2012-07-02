@@ -10,13 +10,14 @@
   <div id="navbar">
     <div id="navbar-container" class="container">
       <div id="navbar-row" class="row">
-        <ul id="nav-list" class="twelvecol">
-          <li class="brand">
-          <h1>
+        <div id="nav-list" class="twelvecol">
+          <span class="brand">
             <a id="home-link" href="/">escaper caper</a>
-          </h1>
-          </li>
-        </ul>
+          </span>
+          <span id="escapes-link">
+            <%= link_to "Browse all Escapes", escapes_path %>
+          </span>
+        </div>
       </div>
     </div>
   </div>
