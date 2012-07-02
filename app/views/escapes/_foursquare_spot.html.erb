@@ -1,4 +1,9 @@
 <div id="attraction_<%=spot.id%>" class="wookmark foursquare">
-  <h2><%= spot.name %></h2>
-  <h4><%= spot.checkins %> others escaped here </h4>
+  <div class="venue-details">
+    <h2><%= spot.name %></h2>
+    <% if spot.categories.any? %>
+      <img src=<%=spot.categories.first.icon_url%>>
+    <% end %>
+    <h4><%= spot.checkins %> others escaped here </h4>
+  </div>
 </div>

@@ -16,28 +16,30 @@ $wkmkradius: 8px;
 .wookmark {
   width: 320px;
   background-color: $lightgrey;
-  min-height: 240px;
-  /*max-height: */
-  /*overflow: auto;*/
+  min-height: 120px;
   border-radius: $wkmkradius;
   -moz-border-radius: $wkmkradius;
   -webkit-border-radius: $wkmkradius;
-  /*margin-right: 20px;*/
-  /*margin-bottom: 20px;*/
   display: inline-block;
 }
 
 .wookmark.foursquare {
 }
 
+.venue-details {
+  display: block;
+  padding: 20px 20px;
+}
+
+.wookmark.flickr {
+  img {
+  }
+}
+
 .flickr-image {
   width: 280px;
   display: block;
   padding: 20px 20px;
-}
-.wookmark.flickr {
-  img {
-  }
 }
 
 #wookmarks-inner {
@@ -50,6 +52,13 @@ $wkmkradius: 8px;
 
 
 #escape-details {
+  padding-bottom: 20px;
+  color: white;
+  h1 {
+    color: white;
+  }
+  span#escape-title {
+  }
 }
 
 #wookmarks-container {
