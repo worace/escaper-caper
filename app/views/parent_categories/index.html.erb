@@ -2,13 +2,14 @@
 $(console.log("hello"));
 $(document).ready(function() {
     $('#splash-toggle').click(function(){
-      $('#promo-container').slideToggle(900, 'easeOutSine');
+      $('#promo-container').animate({'margin-top':'-1420px'}, 1600, 'easeInOutCubic');
     });
     });
 </script>
       <%#$('#promo-container').animate({height:'0px'}, 500);%>
       <%#//this method increases the height to 72px%>
       <%#});%>
+      <%#$('#promo-container').slideToggle(900, 'easeOutSine');%>
 
 <div id="promo-container" class="custom-container">
   <div id="promo-details" class="center-col">
