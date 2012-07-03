@@ -1,5 +1,5 @@
 desc "Scrape LS Escapes"
-task :scrape_escapes => :environment do
+task :update_escapes => :environment do
   require 'nokogiri'
   require 'open-uri'
   require 'mechanize'
@@ -54,7 +54,10 @@ task :scrape_escapes => :environment do
     puts attrs.inspect
 
     if e = Escape.find_by_title(attrs["title"])
-      e.update_attributes(attrs)
+      puts "adding attrs"
+      puts attrs["livingsocial_url"]
+      puts attrs["livingsocial_id"]
+      puts e.update_attributes(attrs)
     end
 
     # courtesy sleep throttle
