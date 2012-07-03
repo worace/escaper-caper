@@ -12,10 +12,21 @@
   background-color: $whale;
   img {
     width: 48px;
+    height: 48px;
+    padding-bottom: 4px;
     display: inline-block;
-    padding-bottom: 20px;
+    &:hover {
+      border-bottom: 1px dashed $honeycomb;
+    }
   }
 
   span {
   }
+}
+
+#pick-again-inner {
+  padding-bottom: 20px;
+}
+#category-links {
+  display: inline-block;
 }

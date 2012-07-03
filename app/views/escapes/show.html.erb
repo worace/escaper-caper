@@ -1,13 +1,15 @@
 
   <div id="pick-again">
     <div id="pick-again-inner" class="center-col">
-      <% @categories.each do |c| %>
-        <% if c.icon_url %>
-          <%= link_to image_tag(c.icon_url), parent_category_path(c), id: "category-#{c.id}-link", class: "category-link" %>
-        <% else %>
-          <%= link_to image_tag("https://foursquare.com/img/categories/parks_outdoors/default_256.png"), parent_category_path(c), id: "category-#{c.id}-link", class: "category-link" %>
+      <div id="category-links">
+        <% @categories.each do |c| %>
+          <% if c.icon_url %>
+            <%= link_to image_tag(c.icon_url), parent_category_path(c), id: "category-#{c.id}-link", class: "category-link" %>
+          <% else %>
+            <%= link_to image_tag("https://foursquare.com/img/categories/parks_outdoors/default_256.png"), parent_category_path(c), id: "category-#{c.id}-link", class: "category-link" %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
       <span>Not your taste? Pick Again</span>
     </div>
   </div>
