@@ -1,0 +1,47 @@
+@import "colors";
+
+#promo-container {
+  height: 1800px;
+  background-color: $clementine;
+}
+
+#promo-details {
+  margin: 200px auto;
+  color: white;
+  h1 {
+    color: white;
+  }
+}
+
+.tagline {
+  font-size: 32px;
+  display: inline-block;
+  margin-right: 12px;
+}
+.plus {
+  padding: 16px;
+  font-size: 96px;
+}
+img.splash-icon {
+  width: 96px;
+  display: inline-block;
+}
+
+span#caption-1 {
+  margin-left: 296px;
+}
+
+span#caption-2 {
+  margin-left: 230px;
+}
+
+#toggle {
+  width: 15%;
+  margin-top: 120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+a#splash-toggle {
+  @include button(pill, $slushie);
+  font-size: 24px;
+}

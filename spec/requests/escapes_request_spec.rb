@@ -41,8 +41,7 @@ describe "Given I am wanting to browse some escapes" do
     end
 
     it "displays the Flickr images attached to this escape" do
-      pending
-      within ("#flickr-carousel") do
+      within ("#wookmarks-inner") do
         page.should have_image photo.url_med
       end
     end

@@ -39,7 +39,7 @@ describe "Given I am wanting to pick an escape based on my interests" do
         parents.each do |p|
           page.should have_selector("#category-#{p.id}")
           page.should have_selector("#category-#{p.id}-name")
-          page.should have_content(p.name)
+          page.should have_content(p.display_name)
         end
       end
     end
