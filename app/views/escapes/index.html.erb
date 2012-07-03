@@ -1,7 +1,13 @@
-<div id="escapes">
-  <% @escapes.each do |escape| %>
-    <div id='<%="escape_#{escape.id}"%>'>
-      <h1><%= link_to(escape.title, escape_path(escape))%></h1>
-    </div>
-  <% end %>
+
+<div id="escapes-index-container" class="custom-container">
+  <div id="escapes" class="center-col">
+    <% @escapes.each do |escape| %>
+      <div id='<%="escape_#{escape.id}"%>' class="index-escape">
+        <h1><%= link_to(escape.title, escape_path(escape))%></h1>
+        <% if escape.flickr_photos.any? %>
+          <img class="preview-image" src='<%= escape.flickr_photos.first.url_med %>'>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

@@ -1,0 +1,29 @@
+@import "colors";
+$indradius: 16px;
+
+.index-escape {
+  a {
+    color: $berry;
+    &:link {
+      text-decoration: none;
+    }
+    &:visited {
+      color: $berry;
+    }
+    &:hover {
+      border-bottom: 1px dashed $whale;
+    }
+  }
+
+  color: white;
+  padding: 20px;
+  background-color: $lightgrey;
+  border-radius: $indradius;
+  -moz-border-radius: $indradius;
+  -webkit-border-radius: $indradius;
+  margin-bottom: 24px;
+}
+
+.preview-image {
+  width: 320px;
+}

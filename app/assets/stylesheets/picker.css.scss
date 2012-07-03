@@ -22,9 +22,11 @@
   margin: 0 0 20px 0;
   padding: 0px;
   img {
-    border-radius: 44px;
-    -moz-border-radius: 44px;
-    -webkit-border-radius: 44px;
+    $selector-radius: 32px;
+    width: 200px;
+    border-radius: $selector-radius;
+    -moz-border-radius: $selector-radius;
+    -webkit-border-radius: $selector-radius;
     &:hover {
       @include box-shadow(0 0 12px 1px white);
     }
