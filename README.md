@@ -36,3 +36,7 @@ Make sure you have redis running on default port:
 Run the tests:
 
 `bundle exec rspec`
+
+One note - the tests use VCR to cache the API responses from foursquare
+and flickr when testing the background jobs, so you will need to be
+connected to the internet on the initial run.
